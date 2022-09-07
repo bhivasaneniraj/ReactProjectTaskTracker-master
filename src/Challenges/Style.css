@@ -1,0 +1,1203 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------- < loging page > --------------------------------------- */
+
+
+
+.phoneimg {
+  position: absolute;
+  left: 40px;
+  top: 90px;
+  width: 450px;
+}
+
+.waveC {
+  position: relative;
+  border-radius: 50px 0 0 50px;
+  width: 450px;
+  margin-top: 145px
+}
+
+.loginD_from img {
+  width: 95px;
+  margin-top: 80px;
+}
+
+.loginD_containar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 80%;
+  height: 605px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px grey;
+}
+
+.loginD {
+  background-color: #00AF40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loginD_from {
+  /* background-color: #9861ba; */
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 150px;
+}
+
+.loginD_from h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 35px;
+  margin-top: 20px;
+}
+
+.inputBox input {
+  border: none;
+  border-bottom: 2px solid silver;
+  width: 300px;
+  height: 40px;
+  outline: none;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.icon {
+  color: silver;
+  margin-right: 10px;
+
+}
+
+.inputBox {
+  position: relative;
+  /* width: 80%; */
+  /* background-color: aqua; */
+}
+
+.inputBox label {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+
+
+}
+
+.inputBox input:focus~label,
+.inputBox input:valid~label {
+  transform: translateY(-25px);
+  font-size: 12px;
+}
+
+
+.underline {
+  position: absolute;
+  bottom: 0px;
+  left: 22px;
+  height: 2px;
+  width: 300px;
+}
+
+.underline::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #00AF40;
+  transform: scaleX(0);
+}
+
+.inputBox input:focus~.underline::before,
+.inputBox input:valid~.underline::before {
+  transform: scaleX(1);
+}
+
+.loginD_from button {
+  width: 80%;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+  margin-top: 50px;
+}
+
+.loginD_from h3 {
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: red;
+}
+
+.err_msg {
+  height: 30px;
+}
+
+
+/* ------------------------------- < /loging page > --------------------------------------- */
+
+/* ------------------------------- < manegarBTN > --------------------------------------- */
+
+.manegarBTN {
+  background-color: #00AF40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.manegar {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  flex-direction: column;
+  width: 60%;
+  height: 400px;
+  border: none;
+  border-radius: 50px;
+  align-items: center;
+  box-shadow: 0 0 15px grey;
+}
+
+.manegar h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 55px;
+  margin-top: 60px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 80%;
+  /* margin-top: 130px; */
+} 
+
+ .button button {
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+  /* margin-top: 50px; */
+  box-shadow: 0 0 10px grey;
+  position: relative;
+  overflow: hidden;
+}
+
+.button .btn1 {
+  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+}
+
+.button .btn2 {
+  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+
+}
+
+.button .btn3 {
+  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+  margin-top: 17px;
+
+}
+
+
+/* .button button:hover {
+  width: 310px;
+  height: 55px;
+} */
+
+.button button i {
+  position: absolute;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.button button:hover .arrowI {
+  position: absolute;
+  right: 30px;
+}
+
+
+
+
+
+
+
+/* ------------------------------- < /manegarBTN > --------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------- < employeBTN  > --------------------------------------- */
+
+.employeBTN {
+  background-color: #00AF40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.empoly {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 550px;
+  height: 600px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px grey;
+  position: relative;
+  align-items: center;
+  /* overflow-y: scroll; */
+}
+
+.empoly::-webkit-scrollbar {
+  width: 8px;
+}
+
+.empoly::-webkit-scrollbar-track {
+  background-color: #ededed;
+}
+
+.empoly::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 10px;
+}
+
+.empoly h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 55px;
+  margin-top: 40px;
+}
+
+.Em_Btn button {
+  width: 350px;
+  height: 52px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-size: 200%;
+  font-size: 1.2rem;
+  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+  box-shadow: 0 0 10px grey;
+  position: relative;
+  overflow: hidden;
+  margin-left: 12px;
+ 
+}
+
+.Em_Btn .Em-Btn1:hover {
+  width: 360px;
+  height: 56px;
+}
+
+.Em-Btn1 i {
+  position: absolute;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.Em_Btn .Em-Btn1:hover .arrowI2 {
+  position: absolute;
+  right: 50px;
+}
+
+.putTask {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  height: 250px;
+  z-index: 10;
+  /* margin-left: 20px; */
+}
+
+.EmployTask {
+  width: 100%;
+  padding-left: 30px;
+  margin-top: 35px;
+  /* background-color: #38d39f; */
+}
+
+.EmployTask label {
+  margin-right: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.putTask button {
+  width: 27%;
+  height: 50px;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.taskInput {
+  /* background-color: #32be8f; */
+  width: 100%;
+  height: 295px;
+  overflow-y: scroll;
+}
+
+.taskInput::-webkit-scrollbar {
+  width: 8px;
+}
+
+.taskInput::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.taskInput::-webkit-scrollbar-thumb {
+  background-color: #00AF40;
+  border-radius: 10px;
+}
+
+.allTaksInputs {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.allTaksInputs button {
+  height: 35px;
+}
+
+.allTaksInputs p {
+  font-size: 20px;
+}
+
+.allTaksInputs input {
+  width: 62%;
+  margin-left: 10px;
+  height: 35px;
+  font-size: 15px;
+  outline: none;
+}
+
+.Show_err {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  margin-top: 10px;
+  top: 0%;
+  box-shadow: 0 0 15px grey;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  z-index: 100;
+}
+
+.Show_err h3 {
+  padding: 10px 0 0 0;
+}
+
+
+.Show_err button {
+  width: 80%;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+} 
+
+.empoly .date span {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: rgb(77, 77, 77);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.fullName {
+  width: 100%;
+  margin-top: 100px;
+  padding-left: 30px;
+}
+
+.fullName input {
+  width: 80%;
+  height: 40px;
+  padding-left: 5px;
+  font-size: 13px;
+  margin-top: 5px;
+  outline: none;
+  font-size: 14px;
+}
+
+.fullName label {
+  margin-right: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.manager_select label {
+  margin-right: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.manager_select {
+  margin-top: 30px;
+  width: 100%;
+  padding-left: 30px;
+
+}
+
+.manager_select_text {
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  width: 250px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.manager_select_text i {
+  transition: all 0.3s;
+}
+
+.manager_select_text h3 {
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.manager_list {
+  margin-top: 10px;
+  position: absolute;
+  z-index: 50;
+}
+
+.manager_list p {
+  width: 250px;
+  background-color: #ededed;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.manager_list p:hover {
+  background-color: #cdcdcd;
+}
+
+.After_Submit {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0%;
+}
+
+.employe_Submit_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+}
+
+.After_Submit_box {
+  width: 555px;
+  height: 300px;
+  background-color: white;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.After_Submit_box h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+.After_Submit_box button {
+  width: 200px;
+  height: 40px;
+  font-size: 19px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 100px;
+}
+.welcom_page h3{
+ font-size: 35px;
+ margin-top: 35px;
+}
+
+/* ------------------------------- < /employeBTN  > --------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------- < TaskDatail  > --------------------------------------- */
+
+
+
+
+
+
+.TakeDetail{
+  background-color: #00AF40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.tables{
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 90%;
+  height: 80%;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px grey;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+table{
+  font-family: 'Poppins', sans-serif;
+  width: 99%;
+  border: 1px solid rgb(223, 218, 218) ;
+}
+
+
+
+
+.Task_detail_table{
+  height: 80%;
+  width: 80%;
+  margin-top: 70px;
+  overflow-y: scroll;
+}
+
+.Task_detail_table::-webkit-scrollbar {
+  width: 8px;
+}
+
+.Task_detail_table::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+}
+
+.Task_detail_table::-webkit-scrollbar-thumb {
+  background-color: #00AF40;
+  border-radius: 20px;
+}
+
+ tr th {
+  background-color: #00AF40;
+  padding: 10px;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgb(223, 218, 218);
+  height: 45px;
+  font-size: 16px;
+}
+
+tbody tr:hover {
+  background-color: #f3f2f3;
+}
+
+tbody tr td {
+  text-align: center;
+}
+
+
+#dropdownMenuButton1 {
+  background-color: white;
+  color: black;
+  border-color: none;
+  font-size: 14px;
+  padding: 5px 150px;
+}
+.dropdown-menu{
+  width: 385px;
+}
+.dropdown-item{
+  font-size: 13px;
+}
+.taskdetails_date{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  text-align: right;
+}
+.zero{
+  text-align: left;
+  padding: 20px 10px 20px 20px;
+  /* background-color: aqua; */
+}
+tbody tr td{
+  border-right: 1px solid rgb(207, 207, 207);
+} 
+
+
+
+
+/* ------------------------------- < /TaskDatail  > --------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------- < ManegarTask > --------------------------------------- */
+
+
+
+.ManegarTask{
+  background-color: #00AF40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.main_ManegarTask{
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 550px;
+  height: 600px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px grey;
+  position: relative;
+  /* align-items: center; */
+}
+.main_ManegarTask h2{
+  text-align: center;
+  font-size: 35px;
+  margin-top: 60px;
+}
+.main_ManegarTask label{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.manager_date{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: rgb(77, 77, 77);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+.managerTask{
+  width: 100%;
+  /* padding-left: 30px; */
+  margin-top: 35px;
+  height: 315px;
+}
+.managerTask label {
+  /* margin-right: 10px; */
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+.manager_putTask{
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  height: 250px;
+  z-index: 10;
+}
+.manager_putTask button{
+  width: 27%;
+  height: 50px;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+.managerAddTask{
+
+  margin-left: 25px;
+}
+
+
+.manager_taskInput {
+  width: 100%;
+  height: 220px;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+.manager_taskInput::-webkit-scrollbar {
+  width: 8px;
+}
+
+.manager_taskInput::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.manager_taskInput::-webkit-scrollbar-thumb {
+  background-color: #00AF40;
+  border-radius: 10px;
+}
+
+
+.manager_allTaksInputs {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 25px;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.manager_allTaksInputs button {
+  height: 35px;
+}
+
+.manager_allTaksInputs p {
+  font-size: 20px;
+}
+
+.manager_allTaksInputs input {
+  width: 62%;
+  margin-left: 10px;
+  height: 35px;
+  font-size: 15px;
+  outline: none;
+}
+#niraj{
+  text-align: center;
+}
+.manager_Show_err{
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  margin-top: 10px;
+  top: 0%;
+  box-shadow: 0 0 15px grey;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  /* padding: 20px; */
+  z-index: 100;
+  padding-top: 10px;
+}
+.manager_Show_err button{
+  width: 80%;
+  height: 35px;
+  font-size: 15px;
+  /* margin-top: 15px; */
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* .Show_err {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 130px;
+  position: absolute;
+  margin-top: 10px;
+  top: 0%;
+  box-shadow: 0 0 15px grey;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  z-index: 100;
+} */
+
+/* ------------------------------- < / ManegarTask > --------------------------------------- */
+
+
+
+
+
+/* ********************************* Media ***************************************** */
+
+/* ------------------------------- < loging page > --------------------------------------- */
+
+@media(max-width:1373px) {
+  .loginD_from {
+    margin-right: 100px;
+  }
+}
+
+@media(max-width:1311px) {
+  .loginD_from {
+    margin-right: 50px;
+  }
+}
+
+@media(max-width:1250px) {
+  .loginD_from {
+    width: 400px;
+  }
+}
+
+@media(max-width:1190px) {
+  .loginD_from {
+    margin-right: 0px;
+    width: 400px;
+  }
+
+  .waveC {
+    width: 450px;
+  }
+
+  .phoneimg {
+    width: 400px;
+  }
+
+  .loginD_containar {
+    height: 545px;
+  }
+}
+
+@media(max-width:1061px) {
+  .loginD_from {
+    width: 350px;
+  }
+}
+
+@media(max-width:1061px) {
+  .waveC {
+    width: 400px;
+  }
+
+  .phoneimg {
+    width: 350px;
+  }
+
+  .loginD_containar {
+    height: 485px;
+  }
+
+  .loginD_from {
+    width: 350px;
+  }
+
+  .loginD_from img {
+    width: 80px;
+  }
+
+  .loginD_from h2 {
+    font-size: 30px;
+  }
+
+  .loginD_from button {
+    width: 70%;
+    height: 45px;
+    font-size: 1.0rem;
+  }
+
+  .inputBox input {
+    width: 250px;
+    height: 40px;
+    outline: none;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .inputBox label {
+    font-size: 14px;
+  }
+
+  .inputBox i {
+    font-size: 14px;
+  }
+}
+
+
+@media(max-width:970px) {
+  .waveC {
+    display: none;
+  }
+
+  .phoneimg {
+    display: none;
+  }
+
+  .loginD_containar {
+    width: 350px;
+  }
+
+  .loginD_from img {
+    width: 100px;
+    margin-top: 50px;
+  }
+
+  .loginD_from button {
+    width: 80%;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .inputBox input {
+    width: 280px;
+    height: 40px;
+  }
+}
+
+
+/* 
+@media(max-height:630px){
+
+  .loginD_containar {
+    width: 80%;
+    height: 500px;
+  }
+  .phoneimg {
+    position: absolute;
+    left: 40px;
+    top: 90px;
+    width: 400px;
+  }
+  
+  .waveC {
+    position: relative;
+    border-radius: 50px 0 0 50px;
+    width: 413px;
+  }
+  .loginD_from img {
+    width: 95px;
+    margin-top: 50px;
+  }
+  
+} */
+
+
+/* ------------------------------- < / loging page > --------------------------------------- */
+/* ------------------------------- <  EmployeBTN > --------------------------------------- */
+
+
+@media(max-width:600px) {
+  .empoly {
+    width: 400px;
+  }
+
+  .fullName input {
+    width: 90%;
+  }
+
+  .allTaksInputs input {
+    width: 80%;
+  }
+
+  .putTask {
+    width: 90%;
+  }
+  .After_Submit_box {
+    width: 500px;
+    height: 300px;
+  }
+}
+@media(max-width:570px) {
+  .After_Submit_box {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media(max-width:420px) {
+  .empoly {
+    width: 350px;
+  }
+
+  .fullName input {
+    width: 90%;
+  }
+
+  .allTaksInputs input {
+    width: 80%;
+  }
+
+  .putTask {
+    width: 90%;
+  }
+
+  .putTask button {
+    width: 35%;
+  }
+
+  .Em_Btn button {
+    width: 280px;
+    height: 52px;
+    margin-top: 20px;
+  }
+
+}
+
+
+
+/* ------------------------------- < / EmployeBTN > --------------------------------------- */
+
+
+/* ------------------------------- <  managerBTN > --------------------------------------- */
+
+
+
+@media(max-width:1277px) {
+  .button {
+    width: 95%;
+  } 
+
+}
+
+@media(max-width:1069px) {
+  .button button {
+    width: 250px;
+    height: 50px;
+  }
+}
+
+@media(max-width:910px) {
+  .button button {
+    width: 200px;
+    height: 45px;
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+/* ------------------------------- < / managerBTN > --------------------------------------- */
+
+
+/* ------------------------------- <  ManegarTask > --------------------------------------- */
+
+@media(max-width:715px) {
+  .main_ManegarTask{
+    width: 450px;
+    height: 600px;
+  }
+  .Em_Btn button {
+    width: 300px;
+    height: 48px;
+  }
+
+}
+
+
+
+
+
+
+/* ------------------------------- < / ManegarTask > --------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ********************************* / Media ***************************************** */
+
+
+/* ********************************** /textarea ************************************** */
+
+.itstextarea{
+  resize: none;
+  width: 400px;
+  border: none;
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  padding: 10px;
+  outline: none;
+  height: 200px;
+  margin-left: 49px;
+}
