@@ -155,9 +155,9 @@ if(loading) {
                   return <>
                     <tbody key={index}>
                       <tr key={index}>
-                        <td> {index + 1} </td>
-                        <td> {val[0]}  </td>
-                        <td className='zero' style={{width:'60%'}} >
+                        <td data-label='no:-'> {index + 1} </td>
+                        <td data-label='Name:-'> {val[0]}  </td>
+                        <td className='zero'  data-label='Task:-'>
                           <>
                                 <div className="Each_task">
                                   <h6> {val[1]}  </h6>
@@ -165,7 +165,6 @@ if(loading) {
                               </>
                           
                         </td>
-                        <td> {val[2]}  </td>
                       </tr>
                     </tbody>
                   </>

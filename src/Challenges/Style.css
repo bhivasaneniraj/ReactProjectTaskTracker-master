@@ -190,6 +190,7 @@
 .button {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: white;
   width: 80%;
   /* margin-top: 130px; */
@@ -215,20 +216,11 @@
   overflow: hidden;
 }
 
-.button .btn1 {
+.button .managerButen{
   background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+  margin: 10px;
 }
 
-.button .btn2 {
-  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
-
-}
-
-.button .btn3 {
-  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
-  margin-top: 17px;
-
-}
 
 
 /* .button button:hover {
@@ -265,6 +257,7 @@
 
 
 /* ------------------------------- < employeBTN  > --------------------------------------- */
+
 
 .employeBTN {
   background-color: #00AF40;
@@ -326,8 +319,6 @@
   box-shadow: 0 0 10px grey;
   position: relative;
   overflow: hidden;
-  margin-left: 12px;
- 
 }
 
 .Em_Btn .Em-Btn1:hover {
@@ -335,7 +326,7 @@
   height: 56px;
 }
 
-.Em-Btn1 i {
+.Em-Button1 i {
   position: absolute;
   right: -30px;
   transition: 0.5s;
@@ -349,6 +340,7 @@
 .putTask {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 86%;
   height: 250px;
   z-index: 10;
@@ -359,7 +351,7 @@
   width: 100%;
   padding-left: 30px;
   margin-top: 35px;
-  /* background-color: #38d39f; */
+  /* background-color: #32be8f; */
 }
 
 .EmployTask label {
@@ -377,49 +369,20 @@
   color: white;
   cursor: pointer;
   font-size: 15px;
+
 }
 
-.taskInput {
-  /* background-color: #32be8f; */
-  width: 100%;
-  height: 295px;
-  overflow-y: scroll;
-}
-
-.taskInput::-webkit-scrollbar {
-  width: 8px;
-}
-
-.taskInput::-webkit-scrollbar-track {
-  background-color: white;
-}
-
-.taskInput::-webkit-scrollbar-thumb {
-  background-color: #00AF40;
-  border-radius: 10px;
-}
-
-.allTaksInputs {
-  display: flex;
-  margin-top: 20px;
-  align-items: center;
-}
-
-.allTaksInputs button {
-  height: 35px;
-}
-
-.allTaksInputs p {
-  font-size: 20px;
-}
-
-.allTaksInputs input {
-  width: 62%;
-  margin-left: 10px;
-  height: 35px;
-  font-size: 15px;
+.itstextarea{
+  resize: none;
+  width: 400px;
+  border: none;
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  padding: 10px;
   outline: none;
 }
+
+
 
 .Show_err {
   background-color: white;
@@ -554,7 +517,7 @@
 }
 
 .After_Submit_box {
-  width: 555px;
+  width: 600px;
   height: 300px;
   background-color: white;
   border-radius: 40px;
@@ -582,7 +545,6 @@
  font-size: 35px;
  margin-top: 35px;
 }
-
 /* ------------------------------- < /employeBTN  > --------------------------------------- */
 
 
@@ -605,8 +567,6 @@
 
 
 /* ------------------------------- < TaskDatail  > --------------------------------------- */
-
-
 
 
 
@@ -646,8 +606,9 @@ table{
 .Task_detail_table{
   height: 80%;
   width: 80%;
-  margin-top: 70px;
+  margin-top: 50px;
   overflow-y: scroll;
+  /* background-color: antiquewhite; */
 }
 
 .Task_detail_table::-webkit-scrollbar {
@@ -673,8 +634,8 @@ table{
 
 tbody tr {
   border-bottom: 1px solid rgb(223, 218, 218);
+  border-top: 1px solid rgb(223, 218, 218);
   height: 45px;
-  font-size: 16px;
 }
 
 tbody tr:hover {
@@ -686,7 +647,7 @@ tbody tr td {
 }
 
 
-#dropdownMenuButton1 {
+/* #dropdownMenuButton1 {
   background-color: white;
   color: black;
   border-color: none;
@@ -698,7 +659,7 @@ tbody tr td {
 }
 .dropdown-item{
   font-size: 13px;
-}
+} */
 .taskdetails_date{
   position: absolute;
   right: 20px;
@@ -708,11 +669,13 @@ tbody tr td {
 .zero{
   text-align: left;
   padding: 20px 10px 20px 20px;
-  /* background-color: aqua; */
+  width: 60%;
 }
 tbody tr td{
-  border-right: 1px solid rgb(207, 207, 207);
-} 
+  border-right: 1px solid rgb(223, 218, 218);
+}
+
+
 
 
 
@@ -1077,6 +1040,9 @@ tbody tr td{
     width: 500px;
     height: 300px;
   }
+  .itstextarea{
+    width: 300px;
+  }
 }
 @media(max-width:570px) {
   .After_Submit_box {
@@ -1116,6 +1082,7 @@ tbody tr td{
 
 
 
+
 /* ------------------------------- < / EmployeBTN > --------------------------------------- */
 
 
@@ -1123,27 +1090,47 @@ tbody tr td{
 
 
 
-@media(max-width:1277px) {
+
+/* ------------------------------- <  managerBTN > --------------------------------------- */
+
+
+
+@media(max-width:1300px) {
   .button {
     width: 95%;
   } 
 
 }
+@media(max-width:1200px) {
+  .button {
+    width: 100%;
+  } 
 
-@media(max-width:1069px) {
-  .button button {
-    width: 250px;
-    height: 50px;
+}
+@media(max-width:1180px) {
+  .manegar {
+    width: 75%;
   }
 }
-
-@media(max-width:910px) {
-  .button button {
-    width: 200px;
-    height: 45px;
-    font-size: 15px;
+@media(max-width:1180px) {
+  .manegar {
+    width: 80%;
   }
 }
+@media(max-width:1000px) {
+  .manegar {
+    width: 90%;
+  }
+}
+@media(max-width:850px) {
+  .button {
+    flex-direction: column;
+  } 
+}
+
+
+/* ------------------------------- < / managerBTN > --------------------------------------- */
+
 
 
 
@@ -1178,6 +1165,53 @@ tbody tr td{
 
 
 
+/* ------------------------------- < TaskDatail  > --------------------------------------- */
+
+
+
+
+@media(max-width:1050px) {
+  .Task_detail_table{
+    width: 90%;
+  }
+}
+@media(max-width:850px) {
+  table tr th{
+    display: none;
+  }
+  tbody tr td{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+    border-bottom: 1px solid rgb(223, 218, 218);
+    padding: 10px;
+  }
+ 
+  .zero{
+    text-align: right;
+    width: 100%;
+    padding-left: 50px ;
+  }
+  tbody tr {
+    /* border-bottom: 2px solid rgb(136, 136, 136); */
+    border-bottom: 2px solid black;
+  }
+  .Task_detail_table{
+    position: relative;
+  }
+  table td::before{
+    content: attr(data-label);
+    position: absolute;
+    left: 1%;
+  }
+
+
+}
+
+
+
+/* ------------------------------- < / TaskDatail  > --------------------------------------- */
 
 
 
