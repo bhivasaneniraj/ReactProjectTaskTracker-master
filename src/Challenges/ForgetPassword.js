@@ -35,7 +35,7 @@ function ForgetPassword() {
             {/* <img src="images/bg.svg" className='phoneimg' alt='bg' /> */}
           </div>
           <div className="loginD_from forget-password-form">
-            <img src="images/AL_MULLA.png" alt="avatar" />
+            <img src="images/AL_MULLA.png" alt="al mulla task tracker" />
             <h2> Task Tracker </h2>
             <div className="inputBox">
               <i className="fa-solid fa-lock icon"></i>
