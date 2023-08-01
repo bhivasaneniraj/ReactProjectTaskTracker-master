@@ -1,70 +1,67 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { Component, useEffect, useState } from "react"
 
-import 'react-datepicker/dist/react-datepicker.css'
-import axios from 'axios'
-import Moment from 'moment';
+import "react-datepicker/dist/react-datepicker.css"
+import axios from "axios"
+import Moment from "moment"
 
-import {useGlobalContext} from '../Context/context.js'
+import { useGlobalContext } from "../Context/context.js"
 
-import './Style.css'
-import moment from 'moment'
+import "./Style.css"
+import moment from "moment"
 function TaskDatail() {
-  const [loading,setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
 
-  const {userId,jwtToken} = useGlobalContext()
- 
+  const { userId, jwtToken } = useGlobalContext()
 
   const TodayDate = new Date()
-  const formatDate = Moment().format('LL')
-  
+  const formatDate = Moment().format("LL")
+
   const [selectedDate, setselectedDate] = useState(TodayDate)
 
-  useEffect( ()=> {
+  useEffect(() => {
     const cookieValue = document.cookie
-  .split('; ')
-  .find((row) => row.startsWith('auth='))
-  ?.split('=')[1];
-    
+      .split("; ")
+      .find((row) => row.startsWith("auth="))
+      ?.split("=")[1]
+
     const headers = {
-      'Authorization': `Bearer ${cookieValue}`
-    };
+      Authorization: `Bearer ${cookieValue}`,
+    }
 
-   console.log('ok')
-   
+    console.log("ok")
+
     const apiRequest = async () => {
-      try{
-
-        const response = await axios.get(`http://localhost:8080/task/headId/${userId}`, {headers})
+      try {
+        const response = await axios.get(`http://localhost:8081/task/headId/${userId}`, { headers })
         setdata(response.data)
         console.log(response)
-        console.log('hello world')
-        if(response.data) setLoading(false)
-      }catch(e){
+        console.log("hello world")
+        if (response.data) setLoading(false)
+      } catch (e) {
         console.log(e)
-        console.log('ginvig error')
+        console.log("ginvig error")
       }
-    }  
-  // useEffect( ()=> {
-  //   const apiRequest = async () => {
-  //     const response = await axios.get(`http://localhost:8080/task/currentdate`, {headers})
-  //     setdata(response.data)
-  //     console.log(response)
-  //   }  
+    }
+    // useEffect( ()=> {
+    //   const apiRequest = async () => {
+    //     const response = await axios.get(`http://localhost:8080/task/currentdate`, {headers})
+    //     setdata(response.data)
+    //     console.log(response)
+    //   }
 
-
- apiRequest()  
-  },[selectedDate])
+    apiRequest()
+  }, [selectedDate])
 
   const [data, setdata] = useState([
-  //     async function getDetails() {
-  //   try {
-  //     alert()
-  //     const response = await axios.get('http://localhost:8089/task/currentdate');
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+    //     async function getDetails() {
+    //   try {
+    //     alert()
+    //     const response = await axios.get('http://localhost:8089/task/currentdate');
+    //     console.log(response);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
     // {
     //   id: 1,
     //   Name: 'Niraj Bhivasane',
@@ -101,75 +98,65 @@ function TaskDatail() {
     //   task: ['Creating Api Code Validation For Complaint Module'],
     //   Date: '27/8/2022'
     // },
-
   ])
-  
 
-//  class task extends Component(){
-//   constructor(props){
-//     super(props)
-//     this.Task_detail_table={
+  //  class task extends Component(){
+  //   constructor(props){
+  //     super(props)
+  //     this.Task_detail_table={
 
-//     }
-//   
- 
-//  }
+  //     }
+  //
 
-if(loading) {
-  <div>loading...</div>
-}
+  //  }
 
+  if (loading) {
+    ;<div>loading...</div>
+  }
 
-moment(new Date()).format("DD/MM/YYYY");
+  moment(new Date()).format("DD/MM/YYYY")
 
   return (
     <>
-
-
-
-
       <div className="TakeDetail">
         <div className="tables">
-
-         
-
           <div className="Task_detail_table">
             <table>
               <thead>
-              <tr>
-                <th> No. </th>
-                <th> Name </th>
-                <th> Task </th>
-                <th> Date </th>
-               
-              </tr>
+                <tr>
+                  <th> No. </th>
+                  <th> Name </th>
+                  <th> Task </th>
+                  <th> Date </th>
+                </tr>
               </thead>
-              {
-                data.map((val,index) => {
-               
-                  return <>
+              {data.map((val, index) => {
+                return (
+                  <>
                     <tbody key={index}>
                       <tr key={index}>
                         <td> {index + 1} </td>
-                        <td> {val[0]}  </td>
-                        <td className='zero' style={{width:'60%'}} >
+                        <td> {val[0]} </td>
+                        <td className="zero" style={{ width: "60%" }}>
                           <>
-                                <div className="Each_task">
-                                  <h6> {val[1]}  </h6>
-                                </div>
-                              </>
-                          
+                            <div className="Each_task">
+                              <h6> {val[1]} </h6>
+                            </div>
+                          </>
                         </td>
-                        <td> {val[2]} {formatDate} </td>
+                        <td>
+                          {" "}
+                          {val[2]} {formatDate}{" "}
+                        </td>
                       </tr>
                     </tbody>
                   </>
-                })
-              }
+                )
+              })}
             </table>
           </div>
         </div>
-      </div >
+      </div>
     </>
   )
 }

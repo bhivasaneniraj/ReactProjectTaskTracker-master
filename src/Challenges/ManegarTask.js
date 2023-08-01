@@ -1,43 +1,45 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Style.css";
-import axios from "axios";
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import "./Style.css"
+import axios from "axios"
+import { useGlobalContext } from "../Context/context"
 
 function ManagerTask() {
+  const { userId } = useGlobalContext()
 
-    async function Submittask() {
-        try {
-          const response = await axios.post('http://localhost:8089/user/12345', {"taskDetails" : "Hello My Name is Shubham" });
-          console.log(response);
-        } catch (error) {
-          console.error(error);
-        }
-      }
+  async function Submittask() {
+    try {
+      const response = await axios.post(`http://localhost:8081/user/${userId}`, { taskDetails: Data })
+      console.log(response)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
-  const [Serr, setSerr] = useState("none");
-  const [GoHome, setGoHome] = useState("none");
-  const [Data, setData] = useState();
+  const [Serr, setSerr] = useState("none")
+  const [GoHome, setGoHome] = useState("none")
+  const [Data, setData] = useState()
 
-  var date = new Date().getDate();
-  var month = new Date().getMonth() + 1;
-  var year = new Date().getFullYear();
+  var date = new Date().getDate()
+  var month = new Date().getMonth() + 1
+  var year = new Date().getFullYear()
 
-  var FullDate = `${date}/${month}/${year}`;
+  var FullDate = `${date}/${month}/${year}`
 
-//   const sunmit = () => {
-//     if (Data === undefined) {
-//       setSerr("block");
-//     } else {
-//       console.log(Data);
-//       setGoHome("block");
-//     }
-//   };
+  //   const sunmit = () => {
+  //     if (Data === undefined) {
+  //       setSerr("block");
+  //     } else {
+  //       console.log(Data);
+  //       setGoHome("block");
+  //     }
+  //   };
 
   const valChange = (e) => {
-    setData(e.target.value);
-  };
+    setData(e.target.value)
+  }
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <>
@@ -56,17 +58,12 @@ function ManagerTask() {
           <div className="EmployTask">
             <label> Add Task- </label>
             <div className="putTask">
-              <textarea
-                className="itstextarea"
-                cols="30"
-                rows="10"
-                onChange={valChange}
-              />
+              <textarea className="itstextarea" cols="30" rows="10" onChange={valChange} />
             </div>
           </div>
           <div className="Em_Btn">
-            <button className="Em-Btn1" onClick={Submittask}>
-              Submit Task <i class="fa-solid fa-arrow-right-long arrowI2"></i>{" "}
+            <button className="Em-Btn1 raise" onClick={Submittask}>
+              Submit Task
             </button>
           </div>
         </div>
@@ -83,7 +80,7 @@ function ManagerTask() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default ManagerTask;
+export default ManagerTask

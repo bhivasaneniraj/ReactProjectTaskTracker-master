@@ -4,10 +4,7 @@
   box-sizing: border-box;
 }
 
-
 /* ------------------------------- < loging page > --------------------------------------- */
-
-
 
 .phoneimg {
   position: absolute;
@@ -20,7 +17,7 @@
   position: relative;
   border-radius: 50px 0 0 50px;
   width: 450px;
-  margin-top: 145px
+  margin-top: 145px;
 }
 
 .loginD_from img {
@@ -41,7 +38,7 @@
 }
 
 .loginD {
-  background-color: #00AF40;
+  background-color: #00af40;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +55,7 @@
 }
 
 .loginD_from h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 35px;
   margin-top: 20px;
 }
@@ -76,7 +73,6 @@
 .icon {
   color: silver;
   margin-right: 10px;
-
 }
 
 .inputBox {
@@ -92,17 +88,14 @@
   color: grey;
   pointer-events: none;
   transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-
-
+  font-family: "Poppins", sans-serif;
 }
 
-.inputBox input:focus~label,
-.inputBox input:valid~label {
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
   transform: translateY(-25px);
   font-size: 12px;
 }
-
 
 .underline {
   position: absolute;
@@ -117,12 +110,12 @@
   content: "";
   height: 100%;
   width: 100%;
-  background: #00AF40;
+  background: #00af40;
   transform: scaleX(0);
 }
 
-.inputBox input:focus~.underline::before,
-.inputBox input:valid~.underline::before {
+.inputBox input:focus ~ .underline::before,
+.inputBox input:valid ~ .underline::before {
   transform: scaleX(1);
 }
 
@@ -132,36 +125,63 @@
   border-radius: 25px;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+  background-image: linear-gradient(to right, #00af40, #00af40, #00af40);
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   margin: 1rem 0;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 50px;
 }
 
 .loginD_from h3 {
   margin-top: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   color: red;
 }
 
 .err_msg {
-  height: 30px;
+  margin-top: 20px;
 }
 
+.forget-password {
+  text-decoration: none;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #00af40;
+}
+
+.forget-password-form img {
+  width: 150px !important;
+}
 
 /* ------------------------------- < /loging page > --------------------------------------- */
+
+/* ------------------------------- < forget password page > --------------------------------------- */
+
+.forget-container {
+  width: 40%;
+  height: 500px;
+}
+
+.forget-password-form {
+  margin-right: 60px;
+  margin-top: -70px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------------- < /forget password page > --------------------------------------- */
 
 /* ------------------------------- < manegarBTN > --------------------------------------- */
 
 .manegarBTN {
-  background-color: #00AF40;
+  background-color: #00af40;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,7 +202,7 @@
 }
 
 .manegar h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 55px;
   margin-top: 60px;
 }
@@ -194,9 +214,9 @@
   color: white;
   width: 80%;
   /* margin-top: 130px; */
-} 
+}
 
- .button button {
+.button button {
   width: 300px;
   height: 50px;
   border-radius: 25px;
@@ -205,23 +225,21 @@
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   margin: 1rem 0;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
   /* margin-top: 50px; */
   box-shadow: 0 0 10px grey;
   position: relative;
   overflow: hidden;
 }
 
-.button .managerButen{
-  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+.button .managerButen {
+  background-image: linear-gradient(to right, #00af40, #00af40, #00af40);
   margin: 10px;
 }
-
-
 
 /* .button button:hover {
   width: 310px;
@@ -239,28 +257,24 @@
   right: 30px;
 }
 
-
-
-
-
-
-
 /* ------------------------------- < /manegarBTN > --------------------------------------- */
 
+/* Size can also be negative; see how it's smaller than the element */
+.raise:hover,
+.raise:focus {
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-0.25em);
+}
 
-
-
-
-
-
-
-
+.login-button:hover {
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05, 1.05);
+}
 
 /* ------------------------------- < employeBTN  > --------------------------------------- */
 
-
 .employeBTN {
-  background-color: #00AF40;
+  background-color: #00af40;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -296,7 +310,7 @@
 }
 
 .empoly h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 55px;
   margin-top: 40px;
 }
@@ -309,13 +323,13 @@
   border: none;
   background-size: 200%;
   font-size: 1.2rem;
-  background-image: linear-gradient(to right, #00AF40, #00AF40, #00AF40);
+  background-image: linear-gradient(to right, #00af40, #00af40, #00af40);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   margin: 1rem 0;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
   box-shadow: 0 0 10px grey;
   position: relative;
   overflow: hidden;
@@ -350,14 +364,14 @@
 .EmployTask {
   width: 100%;
   padding-left: 30px;
-  margin-top: 35px;
+  margin-top: 50px;
   /* background-color: #32be8f; */
 }
 
 .EmployTask label {
   margin-right: 10px;
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 15px;
 }
 
@@ -369,10 +383,9 @@
   color: white;
   cursor: pointer;
   font-size: 15px;
-
 }
 
-.itstextarea{
+.itstextarea {
   resize: none;
   width: 400px;
   border: none;
@@ -381,8 +394,6 @@
   padding: 10px;
   outline: none;
 }
-
-
 
 .Show_err {
   background-color: white;
@@ -394,14 +405,13 @@
   top: 0%;
   box-shadow: 0 0 15px grey;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   z-index: 100;
 }
 
 .Show_err h3 {
   padding: 10px 0 0 0;
 }
-
 
 .Show_err button {
   width: 80%;
@@ -413,7 +423,7 @@
   background-color: black;
   color: white;
   cursor: pointer;
-} 
+}
 
 .empoly .date span {
   position: absolute;
@@ -421,7 +431,7 @@
   top: 20px;
   color: rgb(77, 77, 77);
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .fullName {
@@ -443,25 +453,24 @@
 .fullName label {
   margin-right: 10px;
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .manager_select label {
   margin-right: 10px;
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .manager_select {
   margin-top: 30px;
   width: 100%;
   padding-left: 30px;
-
 }
 
 .manager_select_text {
   background-color: black;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: white;
   width: 250px;
   height: 40px;
@@ -513,7 +522,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-
 }
 
 .After_Submit_box {
@@ -525,7 +533,7 @@
 }
 
 .After_Submit_box h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 30px;
   margin-top: 40px;
 }
@@ -541,38 +549,16 @@
   border-radius: 30px;
   margin-top: 100px;
 }
-.welcom_page h3{
- font-size: 35px;
- margin-top: 35px;
+.welcom_page h3 {
+  font-size: 35px;
+  margin-top: 35px;
 }
 /* ------------------------------- < /employeBTN  > --------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ------------------------------- < TaskDatail  > --------------------------------------- */
 
-
-
-
-.TakeDetail{
-  background-color: #00AF40;
+.TakeDetail {
+  background-color: #00af40;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -580,7 +566,7 @@
   width: 100%;
   position: relative;
 }
-.tables{
+.tables {
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -594,16 +580,13 @@
   justify-content: center;
 }
 
-table{
-  font-family: 'Poppins', sans-serif;
+table {
+  font-family: "Poppins", sans-serif;
   width: 99%;
-  border: 1px solid rgb(223, 218, 218) ;
+  border: 1px solid rgb(223, 218, 218);
 }
 
-
-
-
-.Task_detail_table{
+.Task_detail_table {
   height: 80%;
   width: 80%;
   margin-top: 50px;
@@ -620,12 +603,12 @@ table{
 }
 
 .Task_detail_table::-webkit-scrollbar-thumb {
-  background-color: #00AF40;
+  background-color: #00af40;
   border-radius: 20px;
 }
 
- tr th {
-  background-color: #00AF40;
+tr th {
+  background-color: #00af40;
   padding: 10px;
   color: white;
   font-weight: normal;
@@ -646,7 +629,6 @@ tbody tr td {
   text-align: center;
 }
 
-
 /* #dropdownMenuButton1 {
   background-color: white;
   color: black;
@@ -660,43 +642,27 @@ tbody tr td {
 .dropdown-item{
   font-size: 13px;
 } */
-.taskdetails_date{
+.taskdetails_date {
   position: absolute;
   right: 20px;
   top: 20px;
   text-align: right;
 }
-.zero{
+.zero {
   text-align: left;
   padding: 20px 10px 20px 20px;
   width: 60%;
 }
-tbody tr td{
+tbody tr td {
   border-right: 1px solid rgb(223, 218, 218);
 }
 
-
-
-
-
-
 /* ------------------------------- < /TaskDatail  > --------------------------------------- */
-
-
-
-
-
-
-
-
-
 
 /* ------------------------------- < ManegarTask > --------------------------------------- */
 
-
-
-.ManegarTask{
-  background-color: #00AF40;
+.ManegarTask {
+  background-color: #00af40;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -704,7 +670,7 @@ tbody tr td{
   width: 100%;
   position: relative;
 }
-.main_ManegarTask{
+.main_ManegarTask {
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -716,24 +682,24 @@ tbody tr td{
   position: relative;
   /* align-items: center; */
 }
-.main_ManegarTask h2{
+.main_ManegarTask h2 {
   text-align: center;
   font-size: 35px;
   margin-top: 60px;
 }
-.main_ManegarTask label{
+.main_ManegarTask label {
   margin-left: 20px;
   margin-top: 10px;
 }
-.manager_date{
+.manager_date {
   position: absolute;
   right: 30px;
   top: 20px;
   color: rgb(77, 77, 77);
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-.managerTask{
+.managerTask {
   width: 100%;
   /* padding-left: 30px; */
   margin-top: 35px;
@@ -742,17 +708,17 @@ tbody tr td{
 .managerTask label {
   /* margin-right: 10px; */
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 15px;
 }
-.manager_putTask{
+.manager_putTask {
   display: flex;
   flex-direction: column;
   width: 86%;
   height: 250px;
   z-index: 10;
 }
-.manager_putTask button{
+.manager_putTask button {
   width: 27%;
   height: 50px;
   background-color: black;
@@ -761,11 +727,9 @@ tbody tr td{
   cursor: pointer;
   font-size: 15px;
 }
-.managerAddTask{
-
+.managerAddTask {
   margin-left: 25px;
 }
-
 
 .manager_taskInput {
   width: 100%;
@@ -783,10 +747,9 @@ tbody tr td{
 }
 
 .manager_taskInput::-webkit-scrollbar-thumb {
-  background-color: #00AF40;
+  background-color: #00af40;
   border-radius: 10px;
 }
-
 
 .manager_allTaksInputs {
   display: flex;
@@ -811,10 +774,10 @@ tbody tr td{
   font-size: 15px;
   outline: none;
 }
-#niraj{
+#niraj {
   text-align: center;
 }
-.manager_Show_err{
+.manager_Show_err {
   background-color: white;
   border-radius: 5px;
   width: 300px;
@@ -824,12 +787,12 @@ tbody tr td{
   top: 0%;
   box-shadow: 0 0 15px grey;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   /* padding: 20px; */
   z-index: 100;
   padding-top: 10px;
 }
-.manager_Show_err button{
+.manager_Show_err button {
   width: 80%;
   height: 35px;
   font-size: 15px;
@@ -858,33 +821,29 @@ tbody tr td{
 
 /* ------------------------------- < / ManegarTask > --------------------------------------- */
 
-
-
-
-
 /* ********************************* Media ***************************************** */
 
 /* ------------------------------- < loging page > --------------------------------------- */
 
-@media(max-width:1373px) {
+@media (max-width: 1373px) {
   .loginD_from {
     margin-right: 100px;
   }
 }
 
-@media(max-width:1311px) {
+@media (max-width: 1311px) {
   .loginD_from {
     margin-right: 50px;
   }
 }
 
-@media(max-width:1250px) {
+@media (max-width: 1250px) {
   .loginD_from {
     width: 400px;
   }
 }
 
-@media(max-width:1190px) {
+@media (max-width: 1190px) {
   .loginD_from {
     margin-right: 0px;
     width: 400px;
@@ -903,13 +862,13 @@ tbody tr td{
   }
 }
 
-@media(max-width:1061px) {
+@media (max-width: 1061px) {
   .loginD_from {
     width: 350px;
   }
 }
 
-@media(max-width:1061px) {
+@media (max-width: 1061px) {
   .waveC {
     width: 400px;
   }
@@ -937,7 +896,7 @@ tbody tr td{
   .loginD_from button {
     width: 70%;
     height: 45px;
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 
   .inputBox input {
@@ -957,8 +916,7 @@ tbody tr td{
   }
 }
 
-
-@media(max-width:970px) {
+@media (max-width: 970px) {
   .waveC {
     display: none;
   }
@@ -988,7 +946,6 @@ tbody tr td{
   }
 }
 
-
 /* 
 @media(max-height:630px){
 
@@ -1015,12 +972,10 @@ tbody tr td{
   
 } */
 
-
 /* ------------------------------- < / loging page > --------------------------------------- */
 /* ------------------------------- <  EmployeBTN > --------------------------------------- */
 
-
-@media(max-width:600px) {
+@media (max-width: 600px) {
   .empoly {
     width: 400px;
   }
@@ -1040,18 +995,18 @@ tbody tr td{
     width: 500px;
     height: 300px;
   }
-  .itstextarea{
+  .itstextarea {
     width: 300px;
   }
 }
-@media(max-width:570px) {
+@media (max-width: 570px) {
   .After_Submit_box {
     width: 400px;
     height: 300px;
   }
 }
 
-@media(max-width:420px) {
+@media (max-width: 420px) {
   .empoly {
     width: 350px;
   }
@@ -1077,73 +1032,53 @@ tbody tr td{
     height: 52px;
     margin-top: 20px;
   }
-
 }
-
-
-
 
 /* ------------------------------- < / EmployeBTN > --------------------------------------- */
 
+/* ------------------------------- <  managerBTN > --------------------------------------- */
 
 /* ------------------------------- <  managerBTN > --------------------------------------- */
 
-
-
-
-/* ------------------------------- <  managerBTN > --------------------------------------- */
-
-
-
-@media(max-width:1300px) {
+@media (max-width: 1300px) {
   .button {
     width: 95%;
-  } 
-
+  }
 }
-@media(max-width:1200px) {
+@media (max-width: 1200px) {
   .button {
     width: 100%;
-  } 
-
+  }
 }
-@media(max-width:1180px) {
+@media (max-width: 1180px) {
   .manegar {
     width: 75%;
   }
 }
-@media(max-width:1180px) {
+@media (max-width: 1180px) {
   .manegar {
     width: 80%;
   }
 }
-@media(max-width:1000px) {
+@media (max-width: 1000px) {
   .manegar {
     width: 90%;
   }
 }
-@media(max-width:850px) {
+@media (max-width: 850px) {
   .button {
     flex-direction: column;
-  } 
+  }
 }
 
-
 /* ------------------------------- < / managerBTN > --------------------------------------- */
 
-
-
-
-
-
-
 /* ------------------------------- < / managerBTN > --------------------------------------- */
-
 
 /* ------------------------------- <  ManegarTask > --------------------------------------- */
 
-@media(max-width:715px) {
-  .main_ManegarTask{
+@media (max-width: 715px) {
+  .main_ManegarTask {
     width: 450px;
     height: 600px;
   }
@@ -1151,35 +1086,22 @@ tbody tr td{
     width: 300px;
     height: 48px;
   }
-
 }
-
-
-
-
-
 
 /* ------------------------------- < / ManegarTask > --------------------------------------- */
 
-
-
-
-
 /* ------------------------------- < TaskDatail  > --------------------------------------- */
 
-
-
-
-@media(max-width:1050px) {
-  .Task_detail_table{
+@media (max-width: 1050px) {
+  .Task_detail_table {
     width: 90%;
   }
 }
-@media(max-width:850px) {
-  table tr th{
+@media (max-width: 850px) {
+  table tr th {
     display: none;
   }
-  tbody tr td{
+  tbody tr td {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -1187,44 +1109,33 @@ tbody tr td{
     border-bottom: 1px solid rgb(223, 218, 218);
     padding: 10px;
   }
- 
-  .zero{
+
+  .zero {
     text-align: right;
     width: 100%;
-    padding-left: 50px ;
+    padding-left: 50px;
   }
   tbody tr {
     /* border-bottom: 2px solid rgb(136, 136, 136); */
     border-bottom: 2px solid black;
   }
-  .Task_detail_table{
+  .Task_detail_table {
     position: relative;
   }
-  table td::before{
+  table td::before {
     content: attr(data-label);
     position: absolute;
     left: 1%;
   }
-
-
 }
-
-
 
 /* ------------------------------- < / TaskDatail  > --------------------------------------- */
 
-
-
-
-
-
-
 /* ********************************* / Media ***************************************** */
-
 
 /* ********************************** /textarea ************************************** */
 
-.itstextarea{
+.itstextarea {
   resize: none;
   width: 400px;
   border: none;

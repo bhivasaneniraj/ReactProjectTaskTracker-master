@@ -1,70 +1,71 @@
-import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import "./Style.css";
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import "./Style.css"
+import { useGlobalContext } from "./Context/context"
 
 function Managertsk() {
-  const [val, setval] = useState([]);
-  const [Serr, setSerr] = useState("none");
-  const [omkar, setomkar] = useState();
-  const [EmtyInput, setEmtyInput] = useState("none");
-  const [fullnameData, setfullnameData] = useState();
-  const [demo, setdemo] = useState([]);
-  const [GoHome, setGoHome] = useState("none");
+  const [val, setval] = useState([])
+  const [Serr, setSerr] = useState("none")
+  const [omkar, setomkar] = useState()
+  const [EmtyInput, setEmtyInput] = useState("none")
+  const [fullnameData, setfullnameData] = useState()
+  const [demo, setdemo] = useState([])
+  const [GoHome, setGoHome] = useState("none")
 
   const handleAdd = () => {
-    const abc = [...val, []];
-    setval(abc);
-  };
+    const abc = [...val, []]
+    setval(abc)
+  }
 
   const handelChange = (onChangeValue, i) => {
-    var inputData = [...val];
-    inputData[i] = onChangeValue.target.value;
-    setval(inputData);
-    setdemo(inputData);
-  };
+    var inputData = [...val]
+    inputData[i] = onChangeValue.target.value
+    setval(inputData)
+    setdemo(inputData)
+  }
 
   const handleDelete = (i) => {
-    const deleteVal = [...val];
-    deleteVal.splice(i, 1);
-    setval(deleteVal);
-  };
+    const deleteVal = [...val]
+    deleteVal.splice(i, 1)
+    setval(deleteVal)
+  }
 
-  var date = new Date().getDate();
-  var month = new Date().getMonth() + 1;
-  var year = new Date().getFullYear();
+  var date = new Date().getDate()
+  var month = new Date().getMonth() + 1
+  var year = new Date().getFullYear()
 
-  var FullDate = `${date}/${month}/${year}`;
+  var FullDate = `${date}/${month}/${year}`
 
   const sunmit = () => {
     if (demo == "") {
-      setSerr("block");
+      setSerr("block")
     }
 
-    var a = [];
+    var a = []
     for (let i = 0; i < val.length; i++) {
       if (val[i].length === 0) {
-        a.push(i + 1);
-        setEmtyInput("block");
+        a.push(i + 1)
+        setEmtyInput("block")
       }
     }
 
-    setomkar(a.toString());
+    setomkar(a.toString())
 
     if (fullnameData == undefined || fullnameData == "") {
-      setSerr("block");
+      setSerr("block")
     } else if (a == 0 && demo != "") {
-      console.log(val);
-      console.log(fullnameData);
-      console.log(FullDate);
-      setGoHome("block");
+      console.log(val)
+      console.log(fullnameData)
+      console.log(FullDate)
+      setGoHome("block")
     }
-  };
+  }
 
   const nameclick = (e) => {
-    setfullnameData(e.target.value);
-  };
+    setfullnameData(e.target.value)
+  }
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <>
@@ -87,12 +88,7 @@ function Managertsk() {
           </div>
           <div className="fullName">
             <label> *Name- </label> <br />
-            <input
-              type="text"
-              placeholder="Please enter full name"
-              value={fullnameData || ""}
-              onChange={nameclick}
-            />
+            <input type="text" placeholder="Please enter full name" value={fullnameData || ""} onChange={nameclick} />
           </div>
           <div className="EmployTask">
             <label> *Add Task- </label>
@@ -103,15 +99,10 @@ function Managertsk() {
                   return (
                     <div className="allTaksInputs" key={i}>
                       <p> {i + 1}: </p>
-                      <input
-                        value={data}
-                        type="text"
-                        placeholder="Enter Task"
-                        onChange={(e) => handelChange(e, i)}
-                      />
+                      <input value={data} type="text" placeholder="Enter Task" onChange={(e) => handelChange(e, i)} />
                       <button onClick={() => handleDelete(i)}> delete </button>
                     </div>
-                  );
+                  )
                 })}
               </div>
             </div>
@@ -136,7 +127,7 @@ function Managertsk() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Managertsk;
+export default Managertsk
