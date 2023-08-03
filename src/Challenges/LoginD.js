@@ -6,12 +6,10 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 function LoginD(props) {
-  const { setJwtToken, setVerticleHeadId } = useGlobalContext()
+  const { userId, setUserId, setJwtToken, setVerticleHeadId } = useGlobalContext()
 
   const [errPsw, seterrPsw] = useState("none")
   const [err, seterr] = useState("none")
-
-  const [userId, setUserId] = useState("")
   const [password, setPassword] = useState("")
 
   const forgetPaswword = () => {
@@ -40,7 +38,7 @@ function LoginD(props) {
         password: password,
       })
       console.log(response)
-      setUserId(response.data.id)
+      // setUserId(response.data.id)
       setVerticleHeadId(response.data.verticleHeadId)
       //   console.log("hello world")
       //   console.log(response.data.user.id, "employee id")
@@ -51,8 +49,8 @@ function LoginD(props) {
         navigate("/Employee")
       } else if (response.data.data.employeeRole == "Manager") {
         navigate("/Manager")
-      } else {
-        navigate("/")
+      } else if (response.data.data.userName === null) {
+        toast.error(response.data.errorMsg)
       }
     } catch (error) {
       // seterrPsw("block")

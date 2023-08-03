@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Style.css"
 import axios from "axios"
@@ -9,8 +9,12 @@ function EmployeBTN() {
   const [GoHome, setGoHome] = useState("none")
   const [Data, setData] = useState()
   const textInput = useRef(null)
+  const [leaves, setLeaves] = useState([])
+  const [empLeaves, setEmpleaves] = useState("")
 
   const { userId, jwtToken } = useGlobalContext()
+
+  console.log(userId)
 
   var date = new Date().getDate()
   var month = new Date().getMonth() + 1
@@ -56,8 +60,9 @@ function EmployeBTN() {
       Authorization: `Bearer ${jwtToken}`,
     }
     try {
-      const data = { taskDetails: textInput.current.value }
-      const response = await axios.post(`http://localhost:8081/user/${userId}`, data, { headers })
+      const data = { taskDetails: textInput.current.value, empLeaves: empLeaves }
+      const response = await axios.post(`http://localhost:8081/user/${userId}`, data)
+
       console.log(response, "employ task")
     } catch (e) {
       console.log(e)
@@ -79,6 +84,17 @@ function EmployeBTN() {
 
   const navigate = useNavigate()
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:8081/task/leaves")
+      .then((response) => {
+        setLeaves(response.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [])
+
   return (
     <>
       <div className="employeBTN">
@@ -94,17 +110,10 @@ function EmployeBTN() {
           </div>
           '
           <div className="welcom_page">
-            {/* <select name="select" id="">
-              <option value="Present">Present</option>
-              <option value="First Half Leave">First Half Leave</option>
-              <option value="Second Half Leave">Second Half Leave</option>
-              <option value="Full Day Leave">Full Day Leave</option>
-            </select> */}
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Present</option>
-              <option value="1">First Half Leave</option>
-              <option value="2">Second Half Leave</option>
-              <option value="3">Full Day Leave</option>
+            <select class="form-select" aria-label="Default select example" onChange={(e) => setEmpleaves(e.target.value)}>
+              {leaves.map((x) => {
+                return <option value={x.allLeaves}>{x.allLeaves}</option>
+              })}
             </select>
           </div>
           <div className="EmployTask">

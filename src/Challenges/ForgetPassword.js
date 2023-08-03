@@ -2,34 +2,33 @@ import React, { useState } from "react"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import axios from "axios"
-import { useGlobalContext } from "../Context/context"
 
 function ForgetPassword() {
-  const { userId } = useGlobalContext()
   const [newPassword, setNewPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
+  const [userId, setUserId] = useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (newPassword === confirmPassword)
-      try {
-        // Make the API call to update the password
-        const response = await axios.post(`http://localhost:8081/user/resetpassword/${userId}`, {
-          responsePassword: newPassword,
-        })
-        console.log(response)
 
-        if (response.data === true) {
-          // Check the API response to see if the password update was successful
-          toast.success("Password updated successfully!")
-          console.log(newPassword, confirmPassword)
-        } else {
-          toast.error("please enter the correct password")
-        }
-      } catch (error) {
-        toast.error("An error occurred while updating the password.")
-        console.error(error)
+    try {
+      // Make the API call to update the password
+      const response = await axios.post(`http://localhost:8081/user/resetpassword/${userId}`, {
+        responsePassword: confirmPassword,
+      })
+      console.log(response)
+
+      if (response.data === true) {
+        // Check the API response to see if the password update was successful
+        toast.success("Password updated successfully!")
+        console.log(newPassword, confirmPassword)
+      } else {
+        toast.error("please enter the correct UserId")
       }
+    } catch (error) {
+      toast.error("An error occurred while updating the password.")
+      console.error(error)
+    }
   }
 
   return (
@@ -45,7 +44,7 @@ function ForgetPassword() {
             <h2> Task Tracker </h2>
             <div className="inputBox">
               <i className="fa-solid fa-user icon"></i>
-              <input type="text" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+              <input type="text" value={userId} onChange={(e) => setUserId(e.target.value)} required />
               <div className="underline"></div>
               <label>User Id</label>
             </div>
