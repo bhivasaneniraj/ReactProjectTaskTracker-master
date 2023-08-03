@@ -22,10 +22,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LoginD num={num} number={number} setnum={setnum} Password={Password} setPassword={setPassword} />} />
-          <Route path="/Employe" element={<EmployeBTN />} />
-          <Route path="/manegar" element={<ManagerBTN />} />
-          <Route path="/manegartask" element={<ManegarTask />} />
-          <Route path="/taskdatail" element={<TaskDatail />} />
+          <Route path="/Employee" element={<EmployeBTN />} />
+          <Route path="/Manager" element={<ManagerBTN />} />
+          <Route path="/manager-task" element={<ManegarTask />} />
+          <Route path="/task-details" element={<TaskDatail />} />
           <Route path="/mgr" element={<UnderMgr />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
         </Routes>

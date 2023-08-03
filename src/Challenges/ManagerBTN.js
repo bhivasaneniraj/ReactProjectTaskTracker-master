@@ -17,11 +17,11 @@ function ManagerBTN() {
   const navigate2 = useNavigate()
   const navigate3 = useNavigate()
   const submitTask = () => {
-    navigate1("/Employe")
+    navigate1("/Employee")
   }
 
   const ViewTask = () => {
-    navigate2("/taskdatail")
+    navigate2("/task-details")
   }
 
   const undermgr = () => {

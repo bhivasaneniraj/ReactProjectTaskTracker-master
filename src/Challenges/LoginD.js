@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useId, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import { useGlobalContext } from "../Context/context.js"
@@ -6,10 +6,13 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 function LoginD(props) {
-  const { setUserId, setJwtToken, setVerticleHeadId } = useGlobalContext()
+  const { setJwtToken, setVerticleHeadId } = useGlobalContext()
 
   const [errPsw, seterrPsw] = useState("none")
   const [err, seterr] = useState("none")
+
+  const [userId, setUserId] = useState("")
+  const [password, setPassword] = useState("")
 
   const forgetPaswword = () => {
     navigate("/forget-password")
@@ -33,10 +36,10 @@ function LoginD(props) {
   async function loginUser() {
     try {
       const response = await axios.post("http://localhost:8081/login", {
-        userName: props.num,
-        password: props.Password,
+        userId: userId,
+        password: password,
       })
-      console.log(response.data.employeeRole)
+      console.log(response)
       setUserId(response.data.id)
       setVerticleHeadId(response.data.verticleHeadId)
       //   console.log("hello world")
@@ -44,10 +47,10 @@ function LoginD(props) {
       //   setJwtToken(response.data.jwtToken)
       //   document.cookie = `auth=${response.data.jwtToken}`
 
-      if (response.data.employeeRole == "EMPLOYEE") {
-        navigate("/Employe")
-      } else if (response.data.employeeRole == "MANAGER") {
-        navigate("/manegar")
+      if (response.data.data.employeeRole == "Employee") {
+        navigate("/Employee")
+      } else if (response.data.data.employeeRole == "Manager") {
+        navigate("/Manager")
       } else {
         navigate("/")
       }
@@ -98,13 +101,13 @@ function LoginD(props) {
             <h2> Task Tracker </h2>
             <div className="inputBox">
               <i className="fa-solid fa-user icon"></i>
-              <input type="text" onChange={props.number} value={props.num || ""} required />
+              <input type="text" value={userId} onChange={(e) => setUserId(e.target.value)} required />
               <div className="underline"></div>
               <label> Employee Id</label>
             </div>
             <div className="inputBox">
               <i className="fa-solid fa-lock icon"></i>
-              <input type="password" onChange={paw} value={props.Password || ""} required />
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
               <div className="underline"></div>
               <label> Enter Password </label>
             </div>
