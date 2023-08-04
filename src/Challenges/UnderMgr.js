@@ -1,47 +1,56 @@
-import React, { Component, useEffect, useState } from "react"
+import React, { Component, useEffect, useState } from "react";
 
-import "react-datepicker/dist/react-datepicker.css"
-import axios from "axios"
-import Moment from "moment"
+import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import Moment from "moment";
 
-import { useGlobalContext } from "../Context/context.js"
+import { useGlobalContext } from "../Context/context.js";
 
-import "./Style.css"
-import moment from "moment"
+import "./Style.css";
+import moment from "moment";
 function TaskDatail() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
-  const { userId, jwtToken } = useGlobalContext()
+  const { userId, jwtToken } = useGlobalContext();
 
-  const TodayDate = new Date()
-  const formatDate = Moment().format("LL")
+  const TodayDate = new Date();
+  const formatDate = Moment().format("LL");
 
-  const [selectedDate, setselectedDate] = useState(TodayDate)
+  const [selectedDate, setselectedDate] = useState(TodayDate);
+  const [leaves, setLeaves] = useState([]);
+  const [empLeaves, setEmpleaves] = useState("");
 
   useEffect(() => {
     const cookieValue = document.cookie
       .split("; ")
       .find((row) => row.startsWith("auth="))
-      ?.split("=")[1]
+      ?.split("=")[1];
 
     const headers = {
       Authorization: `Bearer ${cookieValue}`,
-    }
+    };
 
-    console.log("ok")
+    console.log("ok");
 
+    const reqBody = {
+      leaves: empLeaves,
+    };
+    console.log(reqBody)
     const apiRequest = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/task/headId/${userId}`, { headers })
-        setdata(response.data)
-        console.log(response)
-        console.log("hello world")
-        if (response.data) setLoading(false)
+        const response = await axios.get(
+          `http://localhost:8080/task/employeeInfo`,
+          reqBody
+        );
+        setdata(response.data);
+        console.log(response);
+        console.log("hello world");
+        if (response.data) setLoading(false);
       } catch (e) {
-        console.log(e)
-        console.log("ginvig error")
+        console.log(e);
+        console.log("ginvig error");
       }
-    }
+    };
     // useEffect( ()=> {
     //   const apiRequest = async () => {
     //     const response = await axios.get(`http://localhost:8080/task/currentdate`, {headers})
@@ -49,8 +58,8 @@ function TaskDatail() {
     //     console.log(response)
     //   }
 
-    apiRequest()
-  }, [selectedDate])
+    apiRequest();
+  }, [empLeaves]);
 
   const [data, setdata] = useState([
     //     async function getDetails() {
@@ -98,7 +107,7 @@ function TaskDatail() {
     //   task: ['Creating Api Code Validation For Complaint Module'],
     //   Date: '27/8/2022'
     // },
-  ])
+  ]);
 
   //  class task extends Component(){
   //   constructor(props){
@@ -111,15 +120,36 @@ function TaskDatail() {
   //  }
 
   if (loading) {
-    ;<div>loading...</div>
+    <div>loading...</div>;
   }
 
-  moment(new Date()).format("DD/MM/YYYY")
+  moment(new Date()).format("DD/MM/YYYY");
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/task/leaves")
+      .then((response) => {
+        setLeaves(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <>
       <div className="TakeDetail">
         <div className="tables">
+          <div className="welcom_page">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              onChange={(e) => setEmpleaves(e.target.value)}>
+              {leaves.map((x) => {
+                return <option value={x.allLeaves}>{x.allLeaves}</option>;
+              })}
+            </select>
+          </div>
           <div className="Task_detail_table">
             <table>
               <thead>
@@ -151,14 +181,14 @@ function TaskDatail() {
                       </tr>
                     </tbody>
                   </>
-                )
+                );
               })}
             </table>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default TaskDatail
+export default TaskDatail;

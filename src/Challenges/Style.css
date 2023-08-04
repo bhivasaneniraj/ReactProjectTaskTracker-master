@@ -171,10 +171,49 @@
 .forget-password-form {
   margin-right: 60px;
   margin-top: -70px;
-  align-items: center;
+   align-items: center;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  margin: auto;
 }
+
+.forget-password-form .update-button{
+  width: 80%;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+   background-image: linear-gradient(to right, #00af40, #00af40, #00af40); 
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-top: 50px;
+}
+
+.forget-password-form .bk-btn{
+  width: 80%;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+ background-image: linear-gradient(to right, #00af40, #00af40, #00af40); 
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
 
 /* ------------------------------- < /forget password page > --------------------------------------- */
 
@@ -645,13 +684,24 @@ tbody tr td {
 .taskdetails_date {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 37px;
   text-align: right;
+  display: flex;
+  gap: 20px;
+}
+
+.details_label{
+  margin-left: 668px;
 }
 .zero {
   text-align: left;
   padding: 20px 10px 20px 20px;
-  width: 60%;
+  width: 53%;
+}
+
+.val_name{
+  width: 15%;
+  font-size: 16px;
 }
 tbody tr td {
   border-right: 1px solid rgb(223, 218, 218);

@@ -61,7 +61,7 @@ function EmployeBTN() {
     }
     try {
       const data = { taskDetails: textInput.current.value, empLeaves: empLeaves }
-      const response = await axios.post(`http://localhost:8081/user/${userId}`, data)
+      const response = await axios.post(`http://localhost:8080/user/${userId}`, data)
 
       console.log(response, "employ task")
     } catch (e) {
@@ -86,7 +86,7 @@ function EmployeBTN() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/task/leaves")
+      .get("http://localhost:8080/task/leaves")
       .then((response) => {
         setLeaves(response.data)
       })
