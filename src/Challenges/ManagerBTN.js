@@ -45,7 +45,7 @@ function ManagerBTN() {
               All Details
             </button>
             <button className="btn3 managerButen raise" onClick={undermgr}>
-              Team Details
+              Task Overide
             </button>
             <button className="btn2 managerButen raise" onClick={submitTask}>
               Add Task

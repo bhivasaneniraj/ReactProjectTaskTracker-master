@@ -7,6 +7,7 @@ import ManegarTask from "./Challenges/ManegarTask"
 import TaskDatail from "./Challenges/TaskDatail"
 import UnderMgr from "./Challenges/UnderMgr"
 import ForgetPassword from "./Challenges/ForgetPassword"
+import CreatePassword from "./Challenges/CreatePassword"
 
 function App() {
   const [num, setnum] = useState()
@@ -28,6 +29,7 @@ function App() {
           <Route path="/task-details" element={<TaskDatail />} />
           <Route path="/mgr" element={<UnderMgr />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="/create-password" element={<CreatePassword />} />
         </Routes>
       </Router>
     </>

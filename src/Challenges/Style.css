@@ -21,18 +21,15 @@
 }
 
 .loginD_from img {
-  width: 95px;
-  margin-top: 80px;
+  width: 160px;
+  margin-top: 30px;
 }
 
 .loginD_containar {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
   background-color: white;
-  width: 80%;
-  height: 605px;
   border: none;
+  width: 450px;
+  height: 75vh;
   border-radius: 50px;
   box-shadow: 0 0 15px grey;
 }
@@ -50,8 +47,8 @@
   width: 450px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-right: 150px;
 }
 
 .loginD_from h2 {
@@ -151,6 +148,7 @@
 .forget-password {
   text-decoration: none;
   margin-top: 30px;
+  margin-left: 10px;
   cursor: pointer;
   color: #00af40;
 }
@@ -171,20 +169,21 @@
 .forget-password-form {
   margin-right: 60px;
   margin-top: -70px;
-   align-items: center;
+  align-items: center;
   display: flex;
   /* justify-content: center; */
   flex-direction: column;
-  margin: auto;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
-.forget-password-form .update-button{
-  width: 80%;
+.forget-password-form .update-button {
+  width: 300px;
   height: 50px;
   border-radius: 25px;
   outline: none;
   border: none;
-   background-image: linear-gradient(to right, #00af40, #00af40, #00af40); 
+  background-image: linear-gradient(to right, #00af40, #00af40, #00af40);
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
@@ -196,13 +195,13 @@
   margin-top: 50px;
 }
 
-.forget-password-form .bk-btn{
-  width: 80%;
+.forget-password-form .bk-btn {
+  width: 300px;
   height: 50px;
   border-radius: 25px;
   outline: none;
   border: none;
- background-image: linear-gradient(to right, #00af40, #00af40, #00af40); 
+  background-image: linear-gradient(to right, #00af40, #00af40, #00af40);
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
@@ -212,8 +211,6 @@
   cursor: pointer;
   transition: 0.5s;
 }
-
-
 
 /* ------------------------------- < /forget password page > --------------------------------------- */
 
@@ -325,8 +322,8 @@
   display: flex;
   background-color: white;
   flex-direction: column;
-  width: 550px;
-  height: 600px;
+  width: 300px;
+  height: 350px;
   border: none;
   border-radius: 50px;
   box-shadow: 0 0 15px grey;
@@ -355,7 +352,7 @@
 }
 
 .Em_Btn button {
-  width: 350px;
+  width: 220px;
   height: 52px;
   border-radius: 25px;
   outline: none;
@@ -372,10 +369,11 @@
   box-shadow: 0 0 10px grey;
   position: relative;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .Em_Btn .Em-Btn1:hover {
-  width: 360px;
+  width: 230px;
   height: 56px;
 }
 
@@ -466,11 +464,20 @@
 
 .empoly .date span {
   position: absolute;
-  right: 30px;
+  right: 100px;
   top: 20px;
   color: rgb(77, 77, 77);
   font-size: 16px;
   font-family: "Poppins", sans-serif;
+}
+
+.welcom_page {
+  margin-bottom: 20px;
+  width: 350px;
+}
+
+.form-select {
+  cursor: pointer;
 }
 
 .fullName {
@@ -609,7 +616,7 @@
   display: flex;
   background-color: white;
   flex-direction: column;
-  width: 90%;
+  width: 500px;
   height: 80%;
   border: none;
   border-radius: 50px;
@@ -617,6 +624,24 @@
   position: relative;
   align-items: center;
   justify-content: center;
+}
+
+.tables-details {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 1030px;
+  height: 80%;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px grey;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-picker {
+  width: 350px;
 }
 
 table {
@@ -690,7 +715,7 @@ tbody tr td {
   gap: 20px;
 }
 
-.details_label{
+.details_label {
   margin-left: 668px;
 }
 .zero {
@@ -699,7 +724,7 @@ tbody tr td {
   width: 53%;
 }
 
-.val_name{
+.val_name {
   width: 15%;
   font-size: 16px;
 }
@@ -1026,9 +1051,9 @@ tbody tr td {
 /* ------------------------------- <  EmployeBTN > --------------------------------------- */
 
 @media (max-width: 600px) {
-  .empoly {
+  /* .empoly {
     width: 400px;
-  }
+  } */
 
   .fullName input {
     width: 90%;

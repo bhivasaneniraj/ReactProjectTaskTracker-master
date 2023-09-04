@@ -1,65 +1,64 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react"
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
+import axios from "axios"
+import Moment from "moment"
 
-import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
-import Moment from "moment";
+import { useGlobalContext } from "../Context/context.js"
 
-import { useGlobalContext } from "../Context/context.js";
-
-import "./Style.css";
-import moment from "moment";
+import "./Style.css"
+import moment from "moment"
 function TaskDatail() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
 
-  const { userId, jwtToken } = useGlobalContext();
+  const { userId, jwtToken } = useGlobalContext()
 
-  const TodayDate = new Date();
-  const formatDate = Moment().format("LL");
+  const TodayDate = new Date()
+  const formatDate = Moment().format("LL")
 
-  const [selectedDate, setselectedDate] = useState(TodayDate);
-  const [leaves, setLeaves] = useState([]);
-  const [empLeaves, setEmpleaves] = useState("");
+  const [selectedDate, setselectedDate] = useState(TodayDate)
+  const [leaves, setLeaves] = useState([])
+  const [empLeaves, setEmpleaves] = useState("")
+
+  const [startDate, setStartDate] = useState(new Date())
 
   useEffect(() => {
     const cookieValue = document.cookie
       .split("; ")
       .find((row) => row.startsWith("auth="))
-      ?.split("=")[1];
+      ?.split("=")[1]
 
     const headers = {
       Authorization: `Bearer ${cookieValue}`,
-    };
+    }
 
-    console.log("ok");
+    console.log("ok")
 
     const reqBody = {
       leaves: empLeaves,
-    };
+    }
     console.log(reqBody)
     const apiRequest = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8080/task/employeeInfo`,
-          reqBody
-        );
-        setdata(response.data);
-        console.log(response);
-        console.log("hello world");
-        if (response.data) setLoading(false);
+        const response = await axios.get(`http://localhost:8081/task/employeeInfo`, reqBody)
+        setdata(response.data)
+        console.log(response)
+        console.log("hello world")
+        if (response.data) setLoading(false)
       } catch (e) {
-        console.log(e);
-        console.log("ginvig error");
+        console.log(e)
+        console.log("ginvig error")
       }
-    };
+    }
     // useEffect( ()=> {
     //   const apiRequest = async () => {
-    //     const response = await axios.get(`http://localhost:8080/task/currentdate`, {headers})
+    //     const response = await axios.get(`http://localhost:8081/task/currentdate`, {headers})
     //     setdata(response.data)
     //     console.log(response)
     //   }
 
-    apiRequest();
-  }, [empLeaves]);
+    apiRequest()
+  }, [empLeaves])
 
   const [data, setdata] = useState([
     //     async function getDetails() {
@@ -107,7 +106,7 @@ function TaskDatail() {
     //   task: ['Creating Api Code Validation For Complaint Module'],
     //   Date: '27/8/2022'
     // },
-  ]);
+  ])
 
   //  class task extends Component(){
   //   constructor(props){
@@ -120,37 +119,67 @@ function TaskDatail() {
   //  }
 
   if (loading) {
-    <div>loading...</div>;
+    ;<div>loading...</div>
   }
 
-  moment(new Date()).format("DD/MM/YYYY");
+  moment(new Date()).format("DD/MM/YYYY")
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/task/leaves")
+      .get("http://localhost:8081/task/leaves")
       .then((response) => {
-        setLeaves(response.data);
+        setLeaves(response.data)
       })
       .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+        console.log(error)
+      })
+  }, [])
+
+  var date = new Date().getDate()
+  var month = new Date().getMonth() + 1
+  var year = new Date().getFullYear()
+
+  var FullDate = `${date}/${month}/${year}`
 
   return (
     <>
       <div className="TakeDetail">
         <div className="tables">
           <div className="welcom_page">
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              onChange={(e) => setEmpleaves(e.target.value)}>
-              {leaves.map((x) => {
-                return <option value={x.allLeaves}>{x.allLeaves}</option>;
-              })}
+            {/* <select class="form-select" aria-label="Default select example" onChange={(e) => setEmpleaves(e.target.value)}> */}
+            <p>Name</p>
+            <select class="form-select" aria-label="Default select example">
+              {/* {leaves.map((x) => {
+                return <option value={x.allLeaves}>{x.allLeaves}</option>
+              })} */}
+              <option selected>select</option>
+              <option value="Niraj Bhivasane">Niraj Bhivasane</option>
+              <option value="Shubham Rai">Shubham Rai</option>
             </select>
           </div>
-          <div className="Task_detail_table">
+          <div className="welcom_page">
+            {/* <select class="form-select" aria-label="Default select example" onChange={(e) => setEmpleaves(e.target.value)}> */}
+            <p>Leaves</p>
+            <select class="form-select" aria-label="Default select example">
+              {/* {leaves.map((x) => {
+                return <option value={x.allLeaves}>{x.allLeaves}</option>
+              })} */}
+              <option selected>select</option>
+
+              <option value="First Half">First Half</option>
+              <option value="Second Half">Second Half</option>
+            </select>
+          </div>
+
+          <div className="welcom_page">
+            {/* <select class="form-select" aria-label="Default select example" onChange={(e) => setEmpleaves(e.target.value)}> */}
+            <p>Date</p>
+            <div className="date">
+              <DatePicker className="date-picker" selected={startDate} onChange={(date) => setStartDate(date)} />
+            </div>
+          </div>
+
+          {/* <div className="Task_detail_table">
             <table>
               <thead>
                 <tr>
@@ -181,14 +210,18 @@ function TaskDatail() {
                       </tr>
                     </tbody>
                   </>
-                );
+                )
               })}
             </table>
+          </div> */}
+
+          <div className="Em_Btn">
+            <button className="Em-Btn1 raise">Submit</button>
           </div>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default TaskDatail;
+export default TaskDatail

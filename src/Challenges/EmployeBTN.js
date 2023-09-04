@@ -11,6 +11,7 @@ function EmployeBTN() {
   const textInput = useRef(null)
   const [leaves, setLeaves] = useState([])
   const [empLeaves, setEmpleaves] = useState("")
+  const [selectedLeaveOption, setSelectedLeaveOption] = useState("")
 
   const { userId, jwtToken } = useGlobalContext()
 
@@ -61,7 +62,7 @@ function EmployeBTN() {
     }
     try {
       const data = { taskDetails: textInput.current.value, empLeaves: empLeaves }
-      const response = await axios.post(`http://localhost:8080/user/${userId}`, data)
+      const response = await axios.post(`http://localhost:8081/user/${userId}`, data)
 
       console.log(response, "employ task")
     } catch (e) {
@@ -86,9 +87,10 @@ function EmployeBTN() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/task/leaves")
+      .get("http://localhost:8081/task/leaves")
       .then((response) => {
         setLeaves(response.data)
+        console.log(response)
       })
       .catch((error) => {
         console.log(error)
@@ -108,7 +110,7 @@ function EmployeBTN() {
           <div className="date">
             <span> Date: {FullDate} </span>
           </div>
-          '
+
           <div className="welcom_page">
             <select class="form-select" aria-label="Default select example" onChange={(e) => setEmpleaves(e.target.value)}>
               {leaves.map((x) => {
@@ -116,20 +118,22 @@ function EmployeBTN() {
               })}
             </select>
           </div>
-          <div className="EmployTask">
-            <label> Add Task- </label>
-            <div className="putTask">
-              <textarea className="itstextarea" cols="30" rows="10" onChange={valChange} ref={textInput} />
+          {/* {empLeaves !== "full day leave" && (
+            <div className="EmployTask">
+              <label> Add Task- </label>
+              <div className="putTask">
+                <textarea className="itstextarea" cols="30" rows="10" onChange={valChange} ref={textInput} />
+              </div>
             </div>
-          </div>
+          )} */}
           <div className="Em_Btn">
             <button className="Em-Btn1 raise" onClick={sunmit}>
-              Submit Task
+              Submit
             </button>
           </div>
         </div>
       </div>
-      <div className="After_Submit" style={{ display: GoHome }}>
+      {/* <div className="After_Submit" style={{ display: GoHome }}>
         <div className="employe_Submit_box">
           <div className="After_Submit_box">
             <h1>
@@ -139,7 +143,7 @@ function EmployeBTN() {
             <button onClick={() => navigate("/")}> OK </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

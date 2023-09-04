@@ -16,6 +16,10 @@ function LoginD(props) {
     navigate("/forget-password")
   }
 
+  const createPaswword = () => {
+    navigate("/create-password")
+  }
+
   const navigate = useNavigate()
 
   //  var emp = 'NirajBhivasane';
@@ -33,7 +37,7 @@ function LoginD(props) {
 
   async function loginUser() {
     try {
-      const response = await axios.post("http://localhost:8080/login", {
+      const response = await axios.post("http://localhost:8081/login", {
         userId: userId,
         password: password,
       })
@@ -90,13 +94,9 @@ function LoginD(props) {
     <>
       <div className="loginD">
         <div className="loginD_containar">
-          <div className="images">
-            <img src="images/AL_MULLA.png" className="waveC" alt="wave" />
-            {/* <img src="images/bg.svg" className='phoneimg' alt='bg' /> */}
-          </div>
           <div className="loginD_from">
-            <img src="images/avatar.svg" alt="avatar" />
-            <h2> Task Tracker </h2>
+            <img src="images/AL_MULLA.png" alt="avatar" />
+
             <div className="inputBox">
               <i className="fa-solid fa-user icon"></i>
               <input type="text" value={userId} onChange={(e) => setUserId(e.target.value)} required />
@@ -114,6 +114,10 @@ function LoginD(props) {
               {/* <h3 style={{ display: errPsw }}> Please Enter Valid Credential. </h3> */}
               <a className="forget-password" onClick={forgetPaswword}>
                 Forget Password?
+              </a>
+              <span className="forget-password">/</span>
+              <a className="forget-password" onClick={createPaswword}>
+                Create Password
               </a>
             </div>
             <button className="login-button" onClick={loginUser}>
